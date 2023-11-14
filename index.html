@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Selector</title>
+    <style>
+        body {
+    background-image: linear-gradient(150deg, orange, white, orange);
+  height: 2000px;
+}
+h1#pen {
+  text-align: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body {
+  text-align: center;
+  color: purple;
+}
+    </style>
+</head>
+
+
+<body>
+    <h1 id="pen">CHOOSE YOUR CHARACTER</h1>
+  <title>CHOOSE YOUR CHARACTER</title>
+<img src="" width="200" height="200" id="character-image" alt="character-select-image" />
+<select name="image-choice" id="image-select">
+  <option value="" disabled selected>Select your character</option>
+  <option value="wolf-image">Wolf</option>
+  <option value="umbreon-image">Umbreon</option>
+  <option value="eevee-image">Eevee</option>
+  <option value="crow-image">Crow</option>
+  <option value="husky-image">Husky</option>
+</select>
+  <audio id="character-audio" controls>
+  <source src="" type="audio/ogg">
+  Your browser does not support mp3 audio
+</audio>
+    <script>
+        const imageSelect = document.getElementById("image-select");
+const characterImg = document.getElementById("character-image");
+const characterSelectSrc =
+  "https://drive.google.com/uc?export=download&id=1ayfmqbm6-Ab2ws71xBS2SFHoGNdBJNOE";
+const wolfSrc =
+  "https://drive.google.com/uc?export=view&id=1fquVU7AuZqD9D5R3ESIB6Ry-Rwg6v1wJ";
+const umbreonSrc =
+  "https://drive.google.com/uc?export=view&id=1Zk0GjxXDu90St2j8CawPaPBnJ75jAQUE";
+const eeveeSrc =
+  "https://drive.google.com/uc?export=view&id=1udMcWaINmatYOw1qamGVgJ0Pp2ohBAp-";
+const crowSrc =
+  "https://drive.google.com/uc?export=view&id=1pYG5RefCNxLbu_iybD9IJohh_LGmia1x";
+const huskySrc =
+  "https://drive.google.com/uc?export=view&id=1rhRk4uprUFRoQ8dOjwkdcPKaMn5CXkDS";
+// const wolfSrc =
+//   "https://drive.google.com/file/d/1fquVU7AuZqD9D5R3ESIB6Ry-Rwg6v1wJ/view?usp=sharing";
+const characterAudio = document.getElementById("character-audio");
+
+const laughAudio =
+  "https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg";
+const hitAudio =
+  "https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/alien_hit.wav";
+characterAudio.src = laughAudio;
+document.body.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    characterAudio.play();
+  }
+});
+
+characterImg.src = characterSelectSrc;
+imageSelect.addEventListener("change", function () {
+  console.log(this.value);
+if (this.value === "wolf-image") {
+    characterImg.src = wolfSrc;
+  } else if (this.value === "umbreon-image") {
+    characterImg.src = umbreonSrc;
+  } else if (this.value === "eevee-image") {
+    characterImg.src = eeveeSrc;
+  } else if (this.value === "crow-image") {
+    characterImg.src = crowSrc;
+  } else if (this.value === "husky-image") {
+    characterImg.src = huskySrc;
+  }
+});
+    </script>
+</body>
+
+
+</html>
